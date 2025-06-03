@@ -1,6 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://bd30i2l8uo4gk"]
+[gd_scene load_steps=15 format=3 uid="uid://bd30i2l8uo4gk"]
 
 [ext_resource type="Script" uid="uid://ch0lswn0lpx04" path="res://scripts/title_bar.gd" id="1_7qx7d"]
+[ext_resource type="Script" uid="uid://0h3dp4xfmf3e" path="res://scripts/add_button.gd" id="2_51bk3"]
+[ext_resource type="Script" uid="uid://djvpicw3nxf8n" path="res://scripts/close_button.gd" id="3_efbr5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlda6"]
 bg_color = Color(0.12549, 0.12549, 0.12549, 1)
@@ -75,6 +77,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rgrph")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jarby")
 theme_override_styles/normal = SubResource("StyleBoxFlat_grylp")
 text = "+"
+script = ExtResource("2_51bk3")
 
 [node name="Spacer" type="Panel" parent="MainConainer/TitleBar"]
 layout_mode = 2
@@ -99,6 +102,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rgrph")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jarby")
 theme_override_styles/normal = SubResource("StyleBoxFlat_grylp")
 text = "x"
+script = ExtResource("3_efbr5")
 
 [node name="BodyMarginContainer" type="MarginContainer" parent="MainConainer"]
 layout_mode = 2

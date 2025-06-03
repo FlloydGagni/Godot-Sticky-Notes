@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c6h4mclvhw0lw"]
+[gd_scene load_steps=15 format=3 uid="uid://c6h4mclvhw0lw"]
 
+[ext_resource type="Script" uid="uid://burh7k5amw4xo" path="res://scripts/notes_card.gd" id="1_3b3cw"]
 [ext_resource type="Script" uid="uid://0760ne8vdv83" path="res://scripts/title_bar_panel_container.gd" id="1_vr81w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6utue"]
@@ -40,6 +41,7 @@ borderless = true
 always_on_top = true
 min_size = Vector2i(288, 150)
 content_scale_size = Vector2i(288, 150)
+script = ExtResource("1_3b3cw")
 
 [node name="NotesCard" type="PanelContainer" parent="."]
 custom_minimum_size = Vector2(288, 150)
