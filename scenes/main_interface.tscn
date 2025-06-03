@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd30i2l8uo4gk"]
+[gd_scene load_steps=12 format=3 uid="uid://bd30i2l8uo4gk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlda6"]
 bg_color = Color(0.12549, 0.12549, 0.12549, 1)
@@ -6,10 +6,28 @@ shadow_color = Color(0, 0, 0, 0.133333)
 shadow_size = 5
 shadow_offset = Vector2(5, 5)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hlda6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgrph"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jarby"]
+bg_color = Color(0.207843, 0.207843, 0.207843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_grylp"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qx7d"]
 bg_color = Color(0.129412, 0.129412, 0.129412, 1)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7qx7d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_51bk3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_efbr5"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_51bk3"]
+content_margin_left = 20.0
 bg_color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efbr5"]
@@ -49,8 +67,11 @@ layout_mode = 2
 [node name="AddButton" type="Button" parent="MainConainer/TitleBar"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hlda6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rgrph")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jarby")
+theme_override_styles/normal = SubResource("StyleBoxFlat_grylp")
 text = "+"
-flat = true
 
 [node name="Spacer" type="Panel" parent="MainConainer/TitleBar"]
 layout_mode = 2
@@ -60,14 +81,20 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7qx7d")
 [node name="SettingsButton" type="Button" parent="MainConainer/TitleBar"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7qx7d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rgrph")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jarby")
+theme_override_styles/normal = SubResource("StyleBoxFlat_grylp")
 text = "o"
-flat = true
 
 [node name="CloseButton" type="Button" parent="MainConainer/TitleBar"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_51bk3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rgrph")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jarby")
+theme_override_styles/normal = SubResource("StyleBoxFlat_grylp")
 text = "x"
-flat = true
 
 [node name="BodyMarginContainer" type="MarginContainer" parent="MainConainer"]
 layout_mode = 2
@@ -92,8 +119,9 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0.529412, 0.529412, 0.529412, 1)
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_efbr5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_51bk3")
-placeholder_text = "   Search..."
+placeholder_text = "Search..."
 
 [node name="Spacer" type="Panel" parent="MainConainer/BodyMarginContainer/Body"]
 custom_minimum_size = Vector2(0, 18)
