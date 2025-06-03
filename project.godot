@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot Sticky Notes"
+run/main_scene="uid://bd30i2l8uo4gk"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,7 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=480
 window/size/viewport_height=750
 window/size/borderless=true
-window/stretch/aspect="ignore"
+
+[gui]
+
+theme/default_font_multichannel_signed_distance_field=true
 
 [rendering]
 
