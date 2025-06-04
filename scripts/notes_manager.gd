@@ -1,6 +1,7 @@
 extends Node
 
 var notes : Dictionary = {}
+var open_notes : Dictionary = {}
 
 func add_note(body : String = "") -> String:
 	var id = _generate_id()

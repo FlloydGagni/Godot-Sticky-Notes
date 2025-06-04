@@ -12,5 +12,8 @@ func load_all_notes_into_ui():
 	for note in NotesManager.notes:
 		var preview_instance = note_preview.instantiate()
 		var preview_label: RichTextLabel = preview_instance.get_node("PreviewMarginContainer/PreviewText")
+		
+		preview_instance.preview_note_id = note
 		preview_label.text = NotesManager.notes[note].note_body
+		
 		notes_container.add_child.call_deferred(preview_instance)
