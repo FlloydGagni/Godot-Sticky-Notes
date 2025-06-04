@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://bd30i2l8uo4gk"]
+[gd_scene load_steps=16 format=3 uid="uid://bd30i2l8uo4gk"]
 
 [ext_resource type="Script" uid="uid://ch0lswn0lpx04" path="res://scripts/title_bar.gd" id="1_7qx7d"]
+[ext_resource type="Script" uid="uid://6xyqh0ysm85l" path="res://scripts/main_interface.gd" id="1_vejak"]
 [ext_resource type="Script" uid="uid://0h3dp4xfmf3e" path="res://scripts/add_button.gd" id="2_51bk3"]
 [ext_resource type="Texture2D" uid="uid://crox5g2si2tf6" path="res://img/icons8-plus (1).svg" id="2_jarby"]
 [ext_resource type="Script" uid="uid://djvpicw3nxf8n" path="res://scripts/close_button.gd" id="3_efbr5"]
@@ -35,12 +36,13 @@ bg_color = Color(0.12549, 0.12549, 0.12549, 1)
 [node name="NotesList" type="Control"]
 custom_minimum_size = Vector2(480, 750)
 layout_mode = 3
-anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_vejak")
 
 [node name="Background" type="PanelContainer" parent="."]
 layout_mode = 1
@@ -62,8 +64,8 @@ grow_vertical = 2
 [node name="TitleBar" type="HBoxContainer" parent="MainConainer"]
 custom_minimum_size = Vector2(480, 60)
 layout_mode = 2
+size_flags_vertical = 0
 theme_override_constants/separation = 0
-alignment = 1
 script = ExtResource("1_7qx7d")
 
 [node name="MarginContainer" type="MarginContainer" parent="MainConainer/TitleBar"]
