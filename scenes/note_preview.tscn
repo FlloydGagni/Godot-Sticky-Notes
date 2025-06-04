@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://du3oq3m50hp4g"]
+
+[node name="NotePreview" type="PanelContainer"]
+custom_minimum_size = Vector2(430, 100)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_right = 215.0
+offset_bottom = 100.0
+grow_horizontal = 2
+
+[node name="PreviewMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PreviewText" type="RichTextLabel" parent="PreviewMarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 15

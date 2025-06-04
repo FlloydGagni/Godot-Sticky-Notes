@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://0760ne8vdv83" path="res://scripts/title_bar_panel_container.gd" id="1_vr81w"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6utue"]
-bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vr81w"]
-bg_color = Color(0.270588, 0.270588, 0.270588, 1)
+bg_color = Color(0.347817, 0.347817, 0.347817, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3b3cw"]
 
