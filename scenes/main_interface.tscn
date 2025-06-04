@@ -1,9 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bd30i2l8uo4gk"]
+[gd_scene load_steps=15 format=3 uid="uid://bd30i2l8uo4gk"]
 
 [ext_resource type="Script" uid="uid://ch0lswn0lpx04" path="res://scripts/title_bar.gd" id="1_7qx7d"]
 [ext_resource type="Script" uid="uid://0h3dp4xfmf3e" path="res://scripts/add_button.gd" id="2_51bk3"]
+[ext_resource type="Texture2D" uid="uid://crox5g2si2tf6" path="res://img/icons8-plus (1).svg" id="2_jarby"]
 [ext_resource type="Script" uid="uid://djvpicw3nxf8n" path="res://scripts/close_button.gd" id="3_efbr5"]
 [ext_resource type="Script" uid="uid://cbsmig5rhwlhc" path="res://scripts/notes_container.gd" id="4_rgrph"]
+[ext_resource type="Texture2D" uid="uid://b60aiw2n77udu" path="res://img/icons8-close (1).svg" id="4_vejak"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlda6"]
 bg_color = Color(0.12549, 0.12549, 0.12549, 1)
@@ -60,16 +62,22 @@ grow_vertical = 2
 [node name="TitleBar" type="HBoxContainer" parent="MainConainer"]
 custom_minimum_size = Vector2(480, 60)
 layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
 script = ExtResource("1_7qx7d")
 
-[node name="AddButton" type="Button" parent="MainConainer/TitleBar"]
+[node name="MarginContainer" type="MarginContainer" parent="MainConainer/TitleBar"]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+
+[node name="AddButton" type="Button" parent="MainConainer/TitleBar/MarginContainer"]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_hlda6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rgrph")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jarby")
 theme_override_styles/normal = SubResource("StyleBoxFlat_grylp")
-text = "+"
+icon = ExtResource("2_jarby")
 script = ExtResource("2_51bk3")
 
 [node name="Spacer" type="Panel" parent="MainConainer/TitleBar"]
@@ -78,14 +86,18 @@ size_flags_horizontal = 3
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_7qx7d")
 
-[node name="CloseButton" type="Button" parent="MainConainer/TitleBar"]
+[node name="MarginContainer2" type="MarginContainer" parent="MainConainer/TitleBar"]
+layout_mode = 2
+theme_override_constants/margin_right = 7
+
+[node name="CloseButton" type="Button" parent="MainConainer/TitleBar/MarginContainer2"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_51bk3")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rgrph")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jarby")
 theme_override_styles/normal = SubResource("StyleBoxFlat_grylp")
-text = "x"
+icon = ExtResource("4_vejak")
 script = ExtResource("3_efbr5")
 
 [node name="BodyMarginContainer" type="MarginContainer" parent="MainConainer"]
@@ -93,6 +105,7 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 18
 theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 18
 
 [node name="Body" type="VBoxContainer" parent="MainConainer/BodyMarginContainer"]
 layout_mode = 2
@@ -116,7 +129,12 @@ layout_mode = 2
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="NotesContainer" type="VBoxContainer" parent="MainConainer/BodyMarginContainer/Body/NotesScroll"]
+[node name="MarginContainer" type="MarginContainer" parent="MainConainer/BodyMarginContainer/Body/NotesScroll"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="NotesContainer" type="VBoxContainer" parent="MainConainer/BodyMarginContainer/Body/NotesScroll/MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

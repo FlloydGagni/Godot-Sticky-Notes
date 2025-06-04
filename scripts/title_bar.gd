@@ -7,6 +7,8 @@ var window_node : Window
 
 func _ready() -> void:
 	window_node = get_parent().get_parent().get_parent() as Window
+	$MarginContainer/AddButton.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	$MarginContainer2/CloseButton.icon_alignment = HORIZONTAL_ALIGNMENT_CENTER
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

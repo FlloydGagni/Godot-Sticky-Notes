@@ -1,7 +1,18 @@
-[gd_scene load_steps=15 format=3 uid="uid://c6h4mclvhw0lw"]
+[gd_scene load_steps=19 format=3 uid="uid://c6h4mclvhw0lw"]
 
 [ext_resource type="Script" uid="uid://burh7k5amw4xo" path="res://scripts/notes_card.gd" id="1_3b3cw"]
 [ext_resource type="Script" uid="uid://0760ne8vdv83" path="res://scripts/title_bar_panel_container.gd" id="1_vr81w"]
+[ext_resource type="Texture2D" uid="uid://crox5g2si2tf6" path="res://img/icons8-plus (1).svg" id="3_i1xss"]
+[ext_resource type="Texture2D" uid="uid://b60aiw2n77udu" path="res://img/icons8-close (1).svg" id="4_brqfy"]
+[ext_resource type="Texture2D" uid="uid://krsfcacnvjo4" path="res://img/icons8-trash (1).svg" id="4_ix7j5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i1xss"]
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6utue"]
 bg_color = Color(0.254902, 0.254902, 0.254902, 1)
@@ -52,6 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_i1xss")
 
 [node name="Background" type="Panel" parent="NotesCard"]
 layout_mode = 2
@@ -78,7 +90,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_3b3cw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_038a5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_brqfy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_i1xss")
-text = "+"
+icon = ExtResource("3_i1xss")
 
 [node name="Spacer" type="Panel" parent="NotesCard/MainContainer/TitleBarPanelContainer/TitleBar"]
 layout_mode = 2
@@ -86,14 +98,14 @@ size_flags_horizontal = 3
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxEmpty_6utue")
 
-[node name="OptionsButton" type="Button" parent="NotesCard/MainContainer/TitleBarPanelContainer/TitleBar"]
+[node name="DeleteButton" type="Button" parent="NotesCard/MainContainer/TitleBarPanelContainer/TitleBar"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vr81w")
 theme_override_styles/hover = SubResource("StyleBoxFlat_038a5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_brqfy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_038a5")
-text = "..."
+icon = ExtResource("4_ix7j5")
 
 [node name="CloseButton" type="Button" parent="NotesCard/MainContainer/TitleBarPanelContainer/TitleBar"]
 custom_minimum_size = Vector2(50, 50)
@@ -102,7 +114,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_brqfy")
 theme_override_styles/hover = SubResource("StyleBoxFlat_038a5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_brqfy")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_m187b")
-text = "x"
+icon = ExtResource("4_brqfy")
 
 [node name="NoteBody" type="TextEdit" parent="NotesCard/MainContainer"]
 layout_mode = 2
@@ -114,4 +126,5 @@ wrap_mode = 1
 scroll_smooth = true
 
 [node name="DebounceTimer" type="Timer" parent="NotesCard"]
+wait_time = 2.0
 one_shot = true

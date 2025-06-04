@@ -29,7 +29,10 @@ func exit_notes_card() -> void:
 func add_new_notes() -> void:
 	var id = NotesManager.add_note()
 	var note_card = new_note_window.instantiate()
+	
 	note_card.initialize(id)
+	NotesManager.open_notes[id] = note_card
+	
 	get_tree().root.add_child(note_card)
 
 func on_text_changed() -> void:
@@ -52,5 +55,3 @@ func shake_and_scale() -> void :
 	tween.tween_property(self, "position:x", start_window_pos.x - 10, 0.05).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(self, "position:x", start_window_pos.x + 10, 0.1).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(self, "position:x", start_window_pos.x, 0.05).set_trans(Tween.TRANS_SINE)
-	
-	
