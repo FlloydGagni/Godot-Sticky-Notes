@@ -112,3 +112,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_ix7j5")
 placeholder_text = "Take a note...       "
 wrap_mode = 1
 scroll_smooth = true
+
+[node name="DebounceTimer" type="Timer" parent="NotesCard"]
+wait_time = 3.0
+one_shot = true

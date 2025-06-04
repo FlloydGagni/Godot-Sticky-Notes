@@ -14,6 +14,10 @@ config/name="Godot Sticky Notes"
 run/main_scene="uid://bd30i2l8uo4gk"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
+[autoload]
+
+NotesManager="*res://scripts/notes_manager.gd"
+
 [display]
 
 window/size/viewport_width=480

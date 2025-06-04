@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bd30i2l8uo4gk"]
+[gd_scene load_steps=16 format=3 uid="uid://bd30i2l8uo4gk"]
 
 [ext_resource type="Script" uid="uid://ch0lswn0lpx04" path="res://scripts/title_bar.gd" id="1_7qx7d"]
 [ext_resource type="Script" uid="uid://0h3dp4xfmf3e" path="res://scripts/add_button.gd" id="2_51bk3"]
 [ext_resource type="Script" uid="uid://djvpicw3nxf8n" path="res://scripts/close_button.gd" id="3_efbr5"]
+[ext_resource type="Script" uid="uid://cbsmig5rhwlhc" path="res://scripts/notes_container.gd" id="4_rgrph"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlda6"]
 bg_color = Color(0.12549, 0.12549, 0.12549, 1)
@@ -147,3 +148,4 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 12
+script = ExtResource("4_rgrph")
