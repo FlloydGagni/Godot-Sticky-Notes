@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://du3oq3m50hp4g"]
+[gd_scene load_steps=3 format=3 uid="uid://du3oq3m50hp4g"]
 
 [ext_resource type="Script" uid="uid://c6ss5wxr6poxi" path="res://scripts/note_preview.gd" id="1_lwgdu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lwgdu"]
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
 
 [node name="NotePreview" type="PanelContainer"]
 custom_minimum_size = Vector2(430, 100)
@@ -11,6 +14,7 @@ offset_left = -215.0
 offset_right = 215.0
 offset_bottom = 100.0
 grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lwgdu")
 script = ExtResource("1_lwgdu")
 
 [node name="PreviewMarginContainer" type="MarginContainer" parent="."]

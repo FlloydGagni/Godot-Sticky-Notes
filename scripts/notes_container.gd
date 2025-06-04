@@ -7,8 +7,13 @@ extends VBoxContainer
 func _ready() -> void:
 	NotesManager.load_notes()
 	load_all_notes_into_ui()
+	
+	SignalBus.notes_saved.connect(load_all_notes_into_ui)
 
 func load_all_notes_into_ui():
+	for child in notes_container.get_children():
+		child.queue_free()
+	
 	for note in NotesManager.notes:
 		var preview_instance = note_preview.instantiate()
 		var preview_label: RichTextLabel = preview_instance.get_node("PreviewMarginContainer/PreviewText")

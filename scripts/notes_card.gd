@@ -38,6 +38,7 @@ func on_text_changed() -> void:
 func on_save_timer_timeout() -> void:
 	note_data.note_body = $NotesCard/MainContainer/NoteBody.text
 	NotesManager.save_note(note_data)
+	SignalBus.notes_saved.emit()
 
 func shake_and_scale() -> void :
 	if tween and tween.is_running():

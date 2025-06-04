@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 [autoload]
 
 NotesManager="*res://scripts/notes_manager.gd"
+SignalBus="*res://scripts/signal_bus.gd"
 
 [display]
 
