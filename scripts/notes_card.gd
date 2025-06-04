@@ -1,8 +1,11 @@
 extends Window
 
+@onready var new_note_window : PackedScene = preload("res://scenes/notes_card.tscn")
+
 @onready var close_button : Button = $NotesCard/MainContainer/TitleBarPanelContainer/TitleBar/CloseButton
 @onready var add_button : Button = $NotesCard/MainContainer/TitleBarPanelContainer/TitleBar/AddButton
-@onready var new_note_window : PackedScene = preload("res://scenes/notes_card.tscn")
+@onready var delete_button: Button = $NotesCard/MainContainer/TitleBarPanelContainer/TitleBar/DeleteButton
+
 @onready var note_body: TextEdit = $NotesCard/MainContainer/NoteBody
 @onready var debounce_timer: Timer = $NotesCard/DebounceTimer
 
@@ -13,6 +16,8 @@ var tween : Tween = null
 func _ready() -> void:
 	close_button.pressed.connect(exit_notes_card)
 	add_button.pressed.connect(add_new_notes)
+	delete_button.pressed.connect(delete_note)
+	
 	note_body.text_changed.connect(on_text_changed)
 	debounce_timer.timeout.connect(on_save_timer_timeout)
 
@@ -24,6 +29,7 @@ func initialize(id : String) -> void:
 func exit_notes_card() -> void:
 	if NotesManager.open_notes.has(note_id):
 		NotesManager.open_notes.erase(note_id)
+	
 	queue_free()
 
 func add_new_notes() -> void:
@@ -34,6 +40,25 @@ func add_new_notes() -> void:
 	NotesManager.open_notes[id] = note_card
 	
 	get_tree().root.add_child(note_card)
+
+func delete_note() -> void :
+	var delete_confirm = ConfirmationDialog.new()
+	
+	delete_confirm.dialog_text = "Delete this note permanenly?"
+	delete_confirm.confirmed.connect(on_delete_confirmed.bind(note_id))
+	
+	add_child(delete_confirm)
+	
+	delete_confirm.popup_centered()
+
+func on_delete_confirmed(id : String) -> void :
+	if NotesManager.open_notes.has(id):
+		NotesManager.open_notes.erase(id)
+	
+	NotesManager.delete_note(id)
+	SignalBus.notes_saved.emit()
+	
+	queue_free()
 
 func on_text_changed() -> void:
 	debounce_timer.start()

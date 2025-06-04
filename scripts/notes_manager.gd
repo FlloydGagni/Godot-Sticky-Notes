@@ -16,6 +16,10 @@ func add_note(body : String = "") -> String:
 
 func delete_note(id : String) -> void:
 	notes.erase(id)
+	
+	var file_path = "user://notes/%s.tres" % id
+	if FileAccess.file_exists(file_path):
+		DirAccess.remove_absolute(file_path)
 
 func get_note(id : String) -> NoteResource:
 	return notes.get(id)
